@@ -1,0 +1,88 @@
+/* Bleu clair bouton : #3D9BEE
+Bleu clair text bouton / fond tweet bouton : #3D9BEE
+Bleu foncé bg : #161F2B
+Rose : #F82483  
+Gris fonçé : #787676
+*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  /* overflow: auto; 
+  max-height: calc(100vh - 40px);
+ height: 100vh; */
+}
+
+.messageHead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+
+}
+
+.messageName {
+    color: white;
+    padding-left: 20px;
+}
+
+.messageAlias{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #787676;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.messagePoint {
+   color: #787676;
+   padding-left: 10px;
+}
+
+.messageHour{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #787676;
+    padding-left: 10px; 
+}
+
+.messageBox{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding-top: 20px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+
+}
+
+.hashtag{
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #787676;
+    cursor: pointer;
+}
+
+.likeContainer{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.heart {
+    color: white;
+    cursor: pointer;
+}
+
+.heart:hover {
+    color: #F82483;
+    cursor: pointer;
+}
+
+.likeCounter{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding-left: 10px;
+}
+
+
