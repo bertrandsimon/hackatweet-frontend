@@ -1,7 +1,25 @@
+/* Bleu clair bouton : #3D9BEE
+Bleu clair text bouton / fond tweet bouton : 3D9BEE
+Bleu foncé bg : #161F2B
+Rose : #F82483  */
+
+@font-face {
+	font-family: "Mont-Heavy";
+	src: url("/fonts/Mont-Heavy.otf");
+
+}
+
+@font-face {
+  font-family: "Mont-Heavy-Light";
+	src: url("/fonts/Mont-ExtraLight.otf"); 
+}
+
+
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Mont-Heavy ,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
