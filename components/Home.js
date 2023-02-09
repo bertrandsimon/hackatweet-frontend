@@ -22,10 +22,31 @@ import styles from '../styles/Home.module.css';
 function Home() {
   return (
     <div className={styles.container}>
-      <Tweet/>
-      <Trends/>
-      <LastTweets/>
+
+      <div className={styles.leftPanel}>
+        <div><Image src="/images/logo.png" alt="lgo" width={60} height={60} /></div>
+        <div></div>
+        <div className={styles.leftBottomUser}>
+            <div className={styles.avatar}><Image src="/images/avatar.jpg" alt="avatar" width={60} height={60} /></div>
+            <div>
+              <h3>John</h3>
+              <h4>@Johncena</h4>
+            </div>
+            
+        </div>
+      </div>
+
+      <div className={styles.centerPanel}>
+        <div><Tweet/></div>
+        <div><LastTweets/></div>
+      </div>
+
+      <div className={styles.rightPanel}>
+        <div><Trends/></div>
+      </div>
+
     </div>
+
   );
 }
 
