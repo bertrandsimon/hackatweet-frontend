@@ -14,6 +14,7 @@ function Hashtag() {
 
       <div className={styles.tweetCount}>
         <span>2</span>
+        <span> </span>
         <span>Tweet(s)</span>
       </div>
 
