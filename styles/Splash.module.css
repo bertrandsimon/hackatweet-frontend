@@ -2,7 +2,13 @@
 Bleu clair text bouton / fond tweet bouton : #3D9BEE
 Bleu foncé bg : #161F2B
 Rose : #F82483  */
+.ant-modal-content {
+	background-color: #161F2B !;
+}
 
+.blackBackgroundModal  {
+  background-color: black;
+}
 
 .container {
 	display: flex;
@@ -11,6 +17,10 @@ Rose : #F82483  */
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+.modalContainer {
+	background-color: #161F2B;
 }
 
 .leftPanel{
