@@ -24,7 +24,7 @@ function Home() {
     <div className={styles.container}>
 
       <div className={styles.leftPanel}>
-        <div><Image src="/images/logo.png" alt="lgo" width={60} height={60} /></div>
+        <div className={styles.logo}><Link href="/splash"><Image src="/images/logo.png" alt="logo" width={60} height={60} /></Link></div>
         <div></div>
         <div className={styles.leftBottomUser}>
             <div className={styles.avatar}><Image src="/images/avatar.jpg" alt="avatar" width={60} height={60} /></div>

@@ -7,21 +7,21 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function Message() {
+function Message(props) {
   return (
 
     <div className={styles.container}>
       
       <div className={styles.messageHead}>
         <div><Image src="/images/avatar.jpg" alt="lgo" width={70} height={70} /></div>
-        <div><span className={styles.messageName}>Antoine</span></div>
-        <div><span className={styles.messageAlias}>@AntoineLeProf</span></div>
+        <div><span className={styles.messageName}>{props.username}</span></div>
+        <div><span className={styles.messageAlias}>@{props.username}</span></div>
         <div><span className={styles.messagePoint}> . </span></div>
         <div><span className={styles.messageHour}> 5 hours </span></div>
       </div>
       
       <div className={styles.messageBox}>
-        <span>Welcome to</span>
+        <span>{props.content}</span>
         <span className={styles.hashtag}>#hackatweet</span>
         <span> guys </span>
       </div>

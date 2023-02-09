@@ -70,3 +70,5 @@ Rose : #F82483  */
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.logo { cursor: pointer;}
