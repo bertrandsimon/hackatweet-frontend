@@ -3,10 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 function Tweet() {
   return (
-    <div>
+    <div className={styles.container}>
+      
+      <div className={styles.title}><span>Home</span></div>
+      
+      <div className={styles.inputContainer}>
+        <input type="text" placeholder='Whats up ?'className={styles.inputArea}/>
+      </div>
 
-     <h1>TWEET</h1>
-
+      <div className={styles.tweetArea}>
+        <span className={styles.nbCharac}>0/280</span >
+        <div className={styles.btnTweet}><span>Tweet</span> </div>
+      </div>
 
     </div>
   );

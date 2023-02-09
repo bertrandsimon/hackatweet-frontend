@@ -9,8 +9,9 @@ Rose : #F82483  */
   width: 100vw;
   background-color: #161F2B;
   display:flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: baseline;
+  flex-direction: row;
  
 }
 
@@ -19,9 +20,11 @@ Rose : #F82483  */
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  width: 20vw;
   padding-left: 60px;
   padding-top: 60px;
   padding-bottom: 60px;
+  
 }
 
 .leftBottomUser {
@@ -50,3 +53,20 @@ Rose : #F82483  */
 }
 
 .avatar {padding-right: 18px;}
+
+.centerPanel {
+  height: 90vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+.rightPanel {
+  height: 90vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

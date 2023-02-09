@@ -2,3 +2,75 @@
 Bleu clair text bouton / fond tweet bouton : #3D9BEE
 Bleu foncé bg : #161F2B
 Rose : #F82483  */
+
+.container {
+    width: 80vw;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.title {
+    color: white;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+.inputContainer {
+    padding: 40px;
+    
+}
+
+.inputContainer input{
+    width: 50%;
+    height: 50px;
+    background-color: #161F2B;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+}
+
+.inputContainer input::placeholder {
+    color: #787676;
+   
+    font-size: 24px;
+}
+
+
+.inputContainer input:focus{
+    /* border-bottom: none; */
+    outline: none;
+}
+
+.tweetArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+     width: 50%;
+     align-items: center;
+}
+
+.nbCharac {
+    font-family: verdana;
+    color: white;
+    font-size: 15px;
+    padding-right: 30px;
+}
+
+.btnTweet {
+    background-color: #3D9BEE;
+	padding: 8px;
+	color: white;
+	text-align: center;
+	border-radius:60px;
+	width: 100px;
+	cursor: pointer;
+}
+
+.btnTweet:hover {
+    background-color: #1c76c5;
+}
+
