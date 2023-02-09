@@ -61,6 +61,18 @@ Rose : #F82483  */
 	border-radius:50px;
 	width: 280px;
 	cursor: pointer; 
+	border: #3D9BEE 1px;
+	border-style: solid;
+	
+}
+
+.btnSignUp:hover {
+	background-color: #1c76c5;
+}
+
+.btnSignIn:hover{
+	
+	background-color: #1c76c5;
 }
 
 .accountTxt {

@@ -24,7 +24,7 @@ function Splash() {
 
         <div className={styles.accountTxt}>Already have an account ?</div>
 
-        <div className={styles.btnSignUp}>
+        <div className={styles.btnSignIn}>
           <span>Sign in</span> 
         </div>
 
