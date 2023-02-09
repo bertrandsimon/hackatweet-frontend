@@ -8,21 +8,21 @@ function Splash() {
       <div className={styles.leftPanel}></div>
 
       <div className={styles.rightPanel}>
-        <div><Image src="/images/logo.png" alt="lgo" width={250} height={250} /></div>
+        <div><Image src="/images/logo.png" alt="lgo" width={70} height={70} /></div>
         
-        <div className={styles.title}>
-          <h1></h1>
+        <div>
+          <h1>See what's <br />happening</h1>
         </div>
 
-        <div className={styles.subtitle}>
-          <h2></h2>
+        <div>
+          <h2>Joint hacktweet today.</h2>
         </div>
 
         <div className={styles.btnSignUp}>
           <span>Sign up</span>  
         </div>
 
-        <span className={styles.accountTxt}>Already have an account ?</span>
+        <div className={styles.accountTxt}>Already have an account ?</div>
 
         <div className={styles.btnSignUp}>
           <span>Sign in</span> 
