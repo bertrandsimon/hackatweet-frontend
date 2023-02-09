@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,9 +6,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-
-
-
+import Tweet from './Tweet';
+import LastTweets from './LastTweets';
+import Trends from './Trends';
 
 // FONT AWESOME IMPORT EXAMPLE
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,13 +21,10 @@ import styles from '../styles/Home.module.css';
 
 function Home() {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-          <Image src="/images/bg.jpg" alt="lgo" width={50} height={50} />
-        </h1>
-      </main>
+    <div className={styles.container}>
+      <Tweet/>
+      <Trends/>
+      <LastTweets/>
     </div>
   );
 }
