@@ -1,0 +1,38 @@
+/* Bleu clair bouton : #3D9BEE
+Bleu clair text bouton / fond tweet bouton : #3D9BEE
+Bleu foncé bg : #161F2B
+Bleu fonçé hashtag bg : #1d2632
+tweet box hover color : #283343
+tweet count color : #707d8a
+Rose : #F82483  */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100px;
+    background-color: #1d2632;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.container:hover {
+    cursor: pointer;
+    background-color: #283343;
+}
+
+
+.hashtagTxt{
+    color: white;
+}
+
+.tweetCount {
+    font-family: verdana;
+    padding-top: 14px;
+    color: #707d8a;
+
+}
