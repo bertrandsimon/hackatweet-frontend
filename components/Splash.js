@@ -14,6 +14,7 @@ function Splash() {
 
  
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modal2Open, setModal2Open] = useState(false);
 
     const showModal = () => {
       setIsModalOpen(true);
@@ -31,20 +32,26 @@ function Splash() {
     <div className={styles.container}>
 
       
-      <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: '#00b96b',
+      <ConfigProvider>
+
             
-            },
-          }}
-        >
-            <Modal theme="dark" footer={null} centered open={isModalOpen} onOk={handleOk} onCancel={handleCancel} width={800} height={560} className={styles.blackBackgroundModal} >
+            <Modal footer={null} centered open={isModalOpen} onCancel={handleCancel} width={800} height={560} className={styles.blackBackgroundModal} >
                 <div onClick={handleCancel} className={styles.closeModalCustom}> <span>X</span> </div>
-              <div className={styles.modalContainer}>
-                <Signup/>
-              </div>
+                <div className={styles.modalContainer}>
+                  <Signup/>
+                </div>
             </Modal>
+
+            <Modal footer={null} centered open={modal2Open} onCancel={() => setModal2Open(false)} width={800} height={560} className={styles.blackBackgroundModal} >
+                <div onClick={handleCancel} className={styles.closeModalCustom}> <span>X</span> </div>
+                <div className={styles.modalContainer}>
+               
+                  <Signin/>
+                </div>
+            </Modal>
+
+            
+
       </ConfigProvider>
 
       <div className={styles.leftPanel}></div>
@@ -66,7 +73,7 @@ function Splash() {
 
         <div className={styles.accountTxt}>Already have an account ?</div>
 
-        <div className={styles.btnSignIn} onClick={showModal}>
+        <div className={styles.btnSignIn} onClick={() => setModal2Open(true)}>
           <span>Sign in</span> 
         </div>
 
