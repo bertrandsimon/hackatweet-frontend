@@ -14,6 +14,7 @@ Rose : #F82483  */
   flex-direction: row;
  
 }
+.token {color: white; font-size: 12px; font-family: verdana;}
 
 .leftPanel {
   display:flex;

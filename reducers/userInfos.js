@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
 	username: '',
 	firstname: '',
-	userId: {},
+	token: '',
 
 };
 
@@ -16,16 +16,16 @@ export const userInfos = createSlice({
 			
 		},
 		memorizeFirstname: (state, action) => {
-			state.userId = action.payload;
+			state.firstname = action.payload;
 			
 		},
-		memorizeUserID: (state, action) => {
-			state.firstname = action.payload;
+		memorizeUserToken: (state, action) => {
+			state.token = action.payload;
 			
 		},
 		
 	},
 });
 
-export const { memorizeUsername, memorizeFirstname, memorizeUserID } = userInfos.actions;
+export const { memorizeUsername, memorizeFirstname, memorizeUserToken } = userInfos.actions;
 export default  userInfos.reducer;

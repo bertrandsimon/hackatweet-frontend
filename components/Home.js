@@ -15,26 +15,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 import styles from '../styles/Home.module.css';
 
 function Home() {
 
   const username = useSelector((state) => state.userInfos.username)
   const firstname = useSelector((state) => state.userInfos.firstname)
+  const token = useSelector((state) => state.userInfos.token)
+
+  console.log(username, firstname, token)
 
   return (
     <div className={styles.container}>
 
       <div className={styles.leftPanel}>
         <div className={styles.logo}><Link href="/splash"><Image src="/images/logo.png" alt="logo" width={60} height={60} /></Link></div>
-        <div></div>
+        <div><span className={styles.token}>{token}</span></div>
         <div className={styles.leftBottomUser}>
             <div className={styles.avatar}><Image src="/images/avatar.jpg" alt="avatar" width={60} height={60} /></div>
             <div>
               <h3>{firstname}</h3>
-              <h4>@{username}</h4>
+              <h4>@{username}</h4>  
+              
             </div>
             
         </div>

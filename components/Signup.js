@@ -2,7 +2,7 @@ import styles from '../styles/Signup.module.css';
 import Image from 'next/image';
 
 import { useDispatch } from 'react-redux';
-import { memorizeUsername, memorizeFirstname, memorizeUserID } from '../reducers/userInfos';
+import { memorizeUsername, memorizeFirstname, memorizeUserToken } from '../reducers/userInfos';
 import userInfos from '../reducers/userInfos';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ function Signup() {
   const dispatch = useDispatch();
 
   const handleSignUp = (firstname, username, password) => {
-    console.log(firstname, username, password);
+   
   
     fetch("http://localhost:3000/users/signup", {
       method: "POST",
@@ -33,13 +33,18 @@ function Signup() {
     })
       .then(response => response.json())
       .then(data => {
-        //console.log(data);
-        console.log('data', data.id)
+        console.log(data);
        
-        dispatch(memorizeUsername(data.username))
-        dispatch(memorizeFirstname(data.firstname))
-        //window.location.replace("http://localhost:3001/");
-
+        const dispatchCalls = [
+          dispatch(memorizeUsername(data.username)),
+          dispatch(memorizeFirstname(data.firstname)),
+          dispatch(memorizeUserToken(data.token)),
+        ];
+      
+        return Promise.all(dispatchCalls);
+      })
+      .then(() => {
+        window.location.replace("http://localhost:3001/");
       })
       .catch(error => {
         console.error(error);
