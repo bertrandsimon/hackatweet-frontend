@@ -12,6 +12,7 @@ import Message from './Message';
 function LastTweets() {
 
   const [messagesData, setMessagesData] = useState([]);
+  const [likedMessages, setLikedMessages] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/messages/allMessages')
@@ -21,8 +22,21 @@ function LastTweets() {
       });
   }, []);
 
+  // Liked messages (inverse data flow)
+  const updateLikedMessages = (messageContent) => {
+    if (likedMessages.find(message => message === messageContent)) {
+      setLikedMessages(likedMessages.filter(message => message !== messageContent));
+    } else {
+      setLikedMessages([...likedMessages, messageContent]);
+    }
+  };
+
+  console.log('likedMessages', likedMessages)
+
+
   const message = messagesData.map( (data,i) => {
-    return <Message key={i} {...data}/>
+    const isLiked = likedMessages.some(message => message === data.content);
+    return <Message key={i} updateLikedMessages={updateLikedMessages} isLiked={isLiked} {...data}/>
   })
 
   console.log(messagesData)
