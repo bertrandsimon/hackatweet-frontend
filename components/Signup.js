@@ -1,8 +1,13 @@
 import styles from '../styles/Signup.module.css';
 import Image from 'next/image';
 
+import { useDispatch } from 'react-redux';
+import { memorizeUsername, memorizeFirstname, memorizeUserID } from '../reducers/userInfos';
+import userInfos from '../reducers/userInfos';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+
+import Router from 'next/router';
 
 function Signup() {
 
@@ -10,6 +15,7 @@ function Signup() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  const dispatch = useDispatch();
 
   const handleSignUp = (firstname, username, password) => {
     console.log(firstname, username, password);
@@ -27,7 +33,13 @@ function Signup() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        //console.log(data);
+        console.log('data', data.id)
+       
+        dispatch(memorizeUsername(data.username))
+        dispatch(memorizeFirstname(data.firstname))
+        //window.location.replace("http://localhost:3001/");
+
       })
       .catch(error => {
         console.error(error);

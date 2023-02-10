@@ -64,7 +64,7 @@ function Splash() {
         </div>
 
         <div>
-          <h2>Joint hacktweet today.</h2>
+          <h2>Joint Hackatweet today.</h2>
         </div>
 
         <div className={styles.btnSignUp} onClick={showModal}>

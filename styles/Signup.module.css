@@ -36,10 +36,10 @@ Rose : #F82483  */
 
 
 .btnSignUp {
-	background-color: #3D9BEE;
+	background-color: #ffffff;
     font-family: Mont-Heavy ,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color:white;
+    color:#3D9BEE;
 	padding: 12px;
     margin: 20px;
 	text-align: center;
@@ -51,6 +51,7 @@ Rose : #F82483  */
 
 .btnSignUp:hover {
 	background-color: #1c76c5;
+    color:white;
 }
 
 .inputSpacing{margin: 10px;}

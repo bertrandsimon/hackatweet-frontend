@@ -15,11 +15,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
-import { hideArticle } from '../reducers/hiddenArticles';
+
 
 import styles from '../styles/Home.module.css';
 
 function Home() {
+
+  const username = useSelector((state) => state.userInfos.username)
+  const firstname = useSelector((state) => state.userInfos.firstname)
+
   return (
     <div className={styles.container}>
 
@@ -29,8 +33,8 @@ function Home() {
         <div className={styles.leftBottomUser}>
             <div className={styles.avatar}><Image src="/images/avatar.jpg" alt="avatar" width={60} height={60} /></div>
             <div>
-              <h3>John</h3>
-              <h4>@Johncena</h4>
+              <h3>{firstname}</h3>
+              <h4>@{username}</h4>
             </div>
             
         </div>
