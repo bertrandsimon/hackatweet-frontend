@@ -39,7 +39,7 @@ function Splash() {
             },
           }}
         >
-            <Modal centered open={isModalOpen} onOk={handleOk} onCancel={handleCancel} width={800} className={styles.blackBackgroundModal}>
+            <Modal theme="dark" footer={null} centered open={isModalOpen}  width={800}  >
               <div className={styles.modalContainer}>
                 <Signup/>
               </div>

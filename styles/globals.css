@@ -14,7 +14,12 @@ Rose : #F82483  */
 	src: url("/fonts/Mont-ExtraLight.otf"); 
 }
 
+.ant-modal .ant-modal-content {
 
+  background-color: #161f2b !important;
+  background-clip: padding-box;
+
+}
 
 body {
   padding: 0;

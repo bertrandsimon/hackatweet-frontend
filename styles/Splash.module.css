@@ -6,6 +6,23 @@ Rose : #F82483  */
 	background-color: #161F2B !;
 }
 
+/* .ant-modal .ant-modal-close-x {
+  
+    color: white !important;
+} */
+
+.ant-modal .ant-modal-footer {
+   
+    display: none;
+}
+
+.ant-modal .ant-modal-content {
+
+  background-color: #161f2b !important;
+  background-clip: padding-box;
+
+}
+
 .blackBackgroundModal  {
   background-color: black;
 }
