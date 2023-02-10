@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -14,7 +14,7 @@ function Message(props) {
     const handleLikeMessage = () => {
       props.updateLikedMessages(props.content);
     };
-    let heartIconStyle = { 'color': '', 'cursor': 'pointer' };
+    let heartIconStyle = { 'color': 'white', 'cursor': 'pointer' };
     if (props.isLiked) {
       heartIconStyle = { 'color': '#F82483', 'cursor': 'pointer' };
     }
@@ -54,8 +54,9 @@ function Message(props) {
       </div>
 
       <div className={styles.likeContainer}>
-        <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className="like" onClick={() => handleLikeMessage()}/></div>
+        <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className={styles.heart} onClick={() => handleLikeMessage()}/></div>
         <span className={styles.likeCounter}>{props.isLiked === true ? `1` : `0`}</span>
+        <div><FontAwesomeIcon icon={faTrash} className={styles.trash}/></div>
       </div>
 
 

@@ -22,6 +22,7 @@ function LastTweets() {
       });
   }, []);
 
+  
   // Liked messages (inverse data flow)
   const updateLikedMessages = (messageContent) => {
     if (likedMessages.find(message => message === messageContent)) {
@@ -31,25 +32,19 @@ function LastTweets() {
     }
   };
 
-  console.log('likedMessages', likedMessages)
-
-
+  
   const message = messagesData.map( (data,i) => {
     const isLiked = likedMessages.some(message => message === data.content);
     return <Message key={i} updateLikedMessages={updateLikedMessages} isLiked={isLiked} {...data}/>
   })
 
-  console.log(messagesData)
+
 
   return (
     <div className={styles.container}>
 
       {message}
  
-
-
-
-
     </div>
   );
 }
