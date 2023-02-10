@@ -4,7 +4,19 @@ Bleu foncé bg : #161F2B
 Rose : #F82483  */
 .ant-modal-content {
 	background-color: #161F2B !;
+	height: 560px !important;
 }
+/* .anticon svg {
+    
+    color: white !important;
+}
+
+.ant-modal .ant-modal-close-x {
+
+    color: white !important;
+} */
+
+.closeModalCustom {color: white; cursor: pointer; text-align: right; width: 760px;}
 
 /* .ant-modal .ant-modal-close-x {
   
@@ -80,6 +92,10 @@ Rose : #F82483  */
 	cursor: pointer;
 }
 
+.btnSignUp:hover {
+	background-color: #1c76c5;
+}
+
 .btnSignIn{
 	background-color: #161F2B;
 	padding: 16px;
@@ -93,9 +109,7 @@ Rose : #F82483  */
 	
 }
 
-.btnSignUp:hover {
-	background-color: #1c76c5;
-}
+
 
 .btnSignIn:hover{
 	

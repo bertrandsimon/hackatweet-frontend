@@ -5,9 +5,27 @@ import Link from 'next/link';
 function Signup() {
   return (
     <div className={styles.container}>
+     
       
-     <h1>SIGNUP MODAL</h1>
-     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, nisi inventore, quos optio aperiam eius provident assumenda et eveniet, nemo aliquam modi eligendi voluptates minima corrupti quasi nulla impedit laboriosam!</p>
+     <div><Image src="/images/logo.png" alt="logo" width={60} height={60} /></div>
+
+     <div className={styles.title}><span>Create your Hackatweet account</span></div> 
+
+     <div className={styles.inputSpacing}> 
+        <input type="text" placeholder='Firstname' className={styles.inputArea} />
+      </div>
+
+     <div className={styles.inputSpacing}>
+        <input type="text" placeholder='Username' className={styles.inputArea} />
+      </div>
+
+     <div className={styles.inputSpacing}>
+        <input type="text" placeholder='Password' className={styles.inputArea} />
+      </div>
+
+     <div className={styles.btnSignUp}>
+        <span>Sign up</span>
+     </div>
 
     </div>
   );

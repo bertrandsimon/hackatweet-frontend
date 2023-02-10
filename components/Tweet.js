@@ -8,7 +8,7 @@ function Tweet() {
       <div className={styles.title}><span>Home</span></div>
       
       <div className={styles.inputContainer}>
-        <input type="text" placeholder='Whats up ?'className={styles.inputArea}/>
+        <input type="text" placeholder='Whats up ?' className={styles.inputArea}/>
       </div>
 
       <div className={styles.tweetArea}>
