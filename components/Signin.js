@@ -55,7 +55,7 @@ function Signin() {
       </div>
 
      <div className={styles.inputSpacing}>
-        <input type="text" placeholder='Password' className={styles.inputArea} onChange={(e) => setPassword(e.target.value)} value={password}/>
+        <input type="password" placeholder='Password' className={styles.inputArea} onChange={(e) => setPassword(e.target.value)} value={password}/>
       </div>
 
      <div className={styles.btnSignIn} onClick={() => handleSignIn(username, password)}>

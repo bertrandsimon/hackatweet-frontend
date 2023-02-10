@@ -23,12 +23,9 @@ function Message(props) {
       const currentDate = new Date();
       const targetDate = new Date(msgDate);
       const difference = targetDate - currentDate;
-      if (difference < 60000){
-        return 'few seconds'
-      }
-      else if (difference > 60000){
-        return `${Math.floor(Math.abs(difference / 3600000))} hours`
-      }
+     
+      return `${Math.floor(Math.abs(difference / 60000))} minutes ago`
+      
       
     }  
 

@@ -9,6 +9,7 @@ Rose : #F82483  */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-left: 50px;
 
 }
 
@@ -28,9 +29,11 @@ Rose : #F82483  */
     width: 50%;
     height: 50px;
     background-color: #161F2B;
-    color: white;
+    color: #8d8d8d;
     border: none;
     border-bottom: 1px solid #8d8d8d;
+    font-size: 18px !important;
+
 }
 
 .inputContainer input::placeholder {

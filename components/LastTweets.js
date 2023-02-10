@@ -18,7 +18,7 @@ function LastTweets() {
     fetch('http://localhost:3000/messages/allMessages')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        //console.log(data)
         setMessagesData(data.allMessages);
       });
   }, []);
