@@ -11,9 +11,10 @@ import storage from 'redux-persist/lib/storage';
 
 //import hiddenArticles from '../reducers/hiddenArticles';
 import userInfos from '../reducers/userInfos';
+import tweetStatus from '../reducers/tweetStatus';
 
 
-const reducers = combineReducers({ userInfos });
+const reducers = combineReducers({ userInfos, tweetStatus });
 const persistConfig = { key: 'hackatweet', storage };
 
 const store = configureStore({

@@ -1,14 +1,19 @@
 import styles from '../styles/Tweet.module.css';
+
+import { newTweetTrigger } from '../reducers/tweetStatus';
+
 import { useDispatch , useSelector } from 'react-redux';
-import Image from 'next/image';
-import Link from 'next/link';
 import{useState , useEffect} from 'react'
+
+
+
 function Tweet() {
 
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.userInfos.token)
-  console.log(token)
+  
   const [message, setMessage] = useState('')
+  const token = useSelector((state) => state.userInfos.token)
+
   const addMessage = () => {
     fetch(`http://localhost:3000/messages/addMessage/${token}`,  {
       method: "POST",
@@ -22,9 +27,14 @@ function Tweet() {
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        dispatch(newTweetTrigger())
+        setMessage('')
       })
-
     }
+
+
+
+
   return (
     <div className={styles.container}>
       

@@ -14,14 +14,16 @@ function LastTweets() {
   const [messagesData, setMessagesData] = useState([]);
   const [likedMessages, setLikedMessages] = useState([]);
 
+  const newTweet = useSelector((state) => state.tweetStatus.newTweet)
+
   useEffect(() => {
     fetch('http://localhost:3000/messages/allMessages')
       .then(response => response.json())
       .then(data => {
-        //console.log(data)
+       
         setMessagesData(data.allMessages);
       });
-  }, []);
+  }, [newTweet]);
 
   
   // Liked messages (inverse data flow)
@@ -33,7 +35,8 @@ function LastTweets() {
     }
   };
 
-  
+
+
   const message = messagesData.map( (data,i) => {
     const isLiked = likedMessages.some(message => message === data.content);
     return <Message key={i} updateLikedMessages={updateLikedMessages} isLiked={isLiked} {...data}/>

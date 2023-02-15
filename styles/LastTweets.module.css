@@ -5,7 +5,27 @@ Rose : #F82483  */
 
 .container {
     width: 100%;
+    max-height: 82vh;
+    /* height: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-y: scroll;
 }
+/* Customize scrollbar for webkit-based browsers */
+.container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .container::-webkit-scrollbar-track {
+    background-color: #283343;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background-color: #040a12;
+    border-radius: 10px;
+  }
+  
+  .container::-webkit-scrollbar-thumb:hover {
+    background-color: #1d2632;
+  }

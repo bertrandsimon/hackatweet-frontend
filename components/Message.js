@@ -9,15 +9,28 @@ import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 function Message(props) {
+    const deleteMessageHandle = () => {
+      
+      console.log('OK')
+      // console.logo('messageId parameters', messageId)
+    }
+
+
 
     
+    //console.log(props)
     const handleLikeMessage = () => {
       props.updateLikedMessages(props.content);
+      console.log('OK')
     };
     let heartIconStyle = { 'color': 'white', 'cursor': 'pointer' };
+    
     if (props.isLiked) {
       heartIconStyle = { 'color': '#F82483', 'cursor': 'pointer' };
+      
     }
+
+    
 
     const timeUntilTargetDate = (msgDate) => {
       const currentDate = new Date();
@@ -53,7 +66,7 @@ function Message(props) {
       <div className={styles.likeContainer}>
         <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className={styles.heart} onClick={() => handleLikeMessage()}/></div>
         <span className={styles.likeCounter}>{props.isLiked === true ? `1` : `0`}</span>
-        <div><FontAwesomeIcon icon={faTrash} className={styles.trash}/></div>
+        <div><FontAwesomeIcon icon={faTrash} className={styles.trash} onClick={ () => deleteMessageHandle()}/></div>
       </div>
 
 
