@@ -2,12 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from '../styles/LastTweets.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import Message from './Message';
-
-
 
 function LastTweets() {
 
@@ -16,12 +12,14 @@ function LastTweets() {
 
   const newTweet = useSelector((state) => state.tweetStatus.newTweet)
 
+
   useEffect(() => {
     fetch('http://localhost:3000/messages/allMessages')
       .then(response => response.json())
       .then(data => {
        
         setMessagesData(data.allMessages);
+        console.log(data) 
       });
   }, [newTweet]);
 
@@ -36,12 +34,10 @@ function LastTweets() {
   };
 
 
-
   const message = messagesData.map( (data,i) => {
     const isLiked = likedMessages.some(message => message === data.content);
     return <Message key={i} updateLikedMessages={updateLikedMessages} isLiked={isLiked} {...data}/>
   })
-
 
 
   return (
