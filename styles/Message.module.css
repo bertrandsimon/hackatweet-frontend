@@ -12,9 +12,11 @@ Gris fonçé : #787676
   border-top: 1px solid #3c4551;
   padding: 40px;
   padding-left: 40px;
-  /* overflow: auto; 
-  max-height: calc(100vh - 40px);
- height: 100vh; */
+ 
+}
+
+.container:hover {
+    background-color: #283343;
 }
 
 .trash {

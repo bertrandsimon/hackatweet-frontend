@@ -5,7 +5,7 @@ Rose : #F82483  */
 
 .container {
     width: 80vw;
-    height: 15vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -32,7 +32,7 @@ Rose : #F82483  */
     color: #8d8d8d;
     border: none;
     border-bottom: 1px solid #8d8d8d;
-    font-size: 18px !important;
+    font-size: 24px !important;
 
 }
 
