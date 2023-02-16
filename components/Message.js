@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { newTweetTrigger } from '../reducers/tweetStatus';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,12 @@ import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 function Message(props) {
+
+  const activeUser = useSelector((state) => state.userInfos.username);
+  let loggedIn = false;
+  if (activeUser === props.username) {loggedIn = true}
+
+  console.log(loggedIn)
 
   const dispatch = useDispatch();
   
@@ -68,7 +74,13 @@ function Message(props) {
       <div className={styles.likeContainer}>
         <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className={styles.heart} onClick={() => handleLikeMessage()}/></div>
         <span className={styles.likeCounter}>{props.isLiked === true ? `1` : `0`}</span>
-        <div><FontAwesomeIcon icon={faTrash} className={styles.trash} onClick={ () => deleteMessageHandle(props.messageId)}/></div>
+        <div> {loggedIn ? (
+          <div>
+            <FontAwesomeIcon icon={faTrash} className={styles.trash} onClick={() => deleteMessageHandle(props.messageId)} />
+          </div>
+          ) : null}
+        </div>
+       
       </div>
 
     </div>
