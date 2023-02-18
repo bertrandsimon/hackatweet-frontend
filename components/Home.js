@@ -35,13 +35,16 @@ function Home() {
     window.location.replace("http://localhost:3001/splash")
   }
 
+
+  const [messageRefresh, setMessageRefresh] = useState(0);
   
+  const handleRefresh = () => {setMessageRefresh(Math.random())}
 
   return (
     <div className={styles.container}>
 
       <div className={styles.leftPanel}>
-        <div className={styles.logo}><Link href="/splash"><a><Image src="/images/logo.png" alt="logo" width={60} height={60} /></a></Link></div>
+        <div className={styles.logo}><Image src="/images/logo.png" alt="logo" width={60} height={60} onClick={() => handleRefresh()}/></div>
         <div></div>
         <div className={styles.leftBottomUser}>
             <div className={styles.avatar}><Image src="/images/avatar.png" alt="avatar" width={60} height={60} /></div>
@@ -57,7 +60,7 @@ function Home() {
 
       <div className={styles.centerPanel}>
         <div><Tweet/></div>
-        <div><LastTweets/></div>
+        <div><LastTweets messageRefresh={messageRefresh}/></div>
       </div>
 
       <div className={styles.rightPanel}>

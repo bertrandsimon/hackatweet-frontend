@@ -50,6 +50,12 @@ Gris fonçé : #787676
 .messageName {
     color: white;
     padding-left: 20px;
+    cursor: pointer;
+}
+
+.messageName:hover {
+    color: #3D9BEE;
+  
 }
 
 .messageAlias{

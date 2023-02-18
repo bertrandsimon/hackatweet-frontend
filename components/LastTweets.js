@@ -5,7 +5,7 @@ import styles from '../styles/LastTweets.module.css';
 
 import Message from './Message';
 
-function LastTweets() {
+function LastTweets(props) {
 
   const [messagesData, setMessagesData] = useState([]);
   const [likedMessages, setLikedMessages] = useState([]);
@@ -16,16 +16,14 @@ function LastTweets() {
   // inverse data flow
 
   const displayMsgsByUser = (userId) => { 
-    //console.log('clicked', userId)
+
     fetch(`http://localhost:3000/messages/allMessagesByUser/`+ userId )
       .then(response => response.json())
       .then(data => {
         
         setMessagesData(data.allMessages);
-        console.log(data.allMessages) 
-        //console.log(data[0].user.firstname) 
       })
-      //.then( messagesData);
+
 
   }
 
@@ -35,9 +33,9 @@ function LastTweets() {
       .then(data => {
        
         setMessagesData(data.allMessages);
-        //console.log(data) 
+    
       });
-  }, [newTweet, newLike]);
+  }, [newTweet, newLike, props.messageRefresh]);
 
   
   // Liked messages (inverse data flow)
