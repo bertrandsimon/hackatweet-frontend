@@ -10,14 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
-
 function Message(props) {
 
   const activeUser = useSelector((state) => state.userInfos.username);
   let loggedIn = false;
   if (activeUser === props.username) {loggedIn = true}
-
-  console.log(loggedIn)
 
   const dispatch = useDispatch();
   
@@ -28,14 +25,15 @@ function Message(props) {
       .then(response => response.json())
       .then(
         dispatch(newTweetTrigger())
-        
       );
      
     }
 
-    const handleLikeMessage = () => {
-      props.updateLikedMessages(props.content);
-      console.log('OK')
+    const handleLikeMessage = (messageId) => {
+      //props.updateLikedMessages(props.content);
+      fetch(`http://localhost:3000/messages/likeMessage/${messageId}`,)
+      .then(response => response.json())
+   
     };
 
     let heartIconStyle = { 'color': 'white', 'cursor': 'pointer' };
@@ -72,8 +70,9 @@ function Message(props) {
       </div>
 
       <div className={styles.likeContainer}>
-        <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className={styles.heart} onClick={() => handleLikeMessage()}/></div>
-        <span className={styles.likeCounter}>{props.isLiked === true ? `1` : `0`}</span>
+        <div><FontAwesomeIcon icon={faHeart} style={heartIconStyle} className={styles.heart} onClick={() => handleLikeMessage(props.messageId)}/></div>
+        <span className={styles.likeCounter}>{props.likes}</span>
+
         <div> {loggedIn ? (
           <div>
             <FontAwesomeIcon icon={faTrash} className={styles.trash} onClick={() => deleteMessageHandle(props.messageId)} />

@@ -26,7 +26,6 @@ function Tweet() {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         dispatch(newTweetTrigger())
         setMessage('')
       })

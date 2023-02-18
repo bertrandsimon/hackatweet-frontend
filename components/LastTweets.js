@@ -19,7 +19,7 @@ function LastTweets() {
       .then(data => {
        
         setMessagesData(data.allMessages);
-        console.log(data) 
+        //console.log(data) 
       });
   }, [newTweet]);
 
