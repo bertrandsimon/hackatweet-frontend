@@ -15,7 +15,19 @@ function LastTweets() {
 
   // inverse data flow
 
-  const displayMsgsByUser = (userId) => { console.log('clicked', userId)}
+  const displayMsgsByUser = (userId) => { 
+    //console.log('clicked', userId)
+    fetch(`http://localhost:3000/messages/allMessagesByUser/`+ userId )
+      .then(response => response.json())
+      .then(data => {
+        
+        setMessagesData(data.allMessages);
+        console.log(data.allMessages) 
+        //console.log(data[0].user.firstname) 
+      })
+      //.then( messagesData);
+
+  }
 
   useEffect(() => {
     fetch(`http://localhost:3000/messages/allMessages?_=${Math.random()}`)
