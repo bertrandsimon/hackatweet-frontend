@@ -1,16 +1,17 @@
 import styles from '../styles/Hashtag.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-function Hashtag() {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+function Hashtag(props) {
 
-  
+  //console.log('props in hashtag component:', props)
 
   return (
     <div className={styles.container}>
       
       <div>
-      <span className={styles.hashtagTxt}>hackatweet</span>
+      <span className={styles.hashtagTxt}>  <FontAwesomeIcon icon={faHashtag}/> {props.hashtag} </span>
       </div>
+      
 
       <div className={styles.tweetCount}>
         <span>2</span>

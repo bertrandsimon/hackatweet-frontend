@@ -1,6 +1,5 @@
 
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { memorizeUsername, memorizeFirstname, memorizeUserToken } from '../reducers/userInfos';
 
@@ -24,8 +23,22 @@ function Home() {
   const username = useSelector((state) => state.userInfos.username)
   const firstname = useSelector((state) => state.userInfos.firstname)
   const token = useSelector((state) => state.userInfos.token)
+
+  const [hashtagsList, setHashtagsList] = useState([])
   
   const dispatch = useDispatch();
+
+  useEffect( ()=> {
+    fetch('http://localhost:3000/messages/allHashtags')
+    .then(response => response.json())
+    .then( data => {
+      console.log('data from hashtags', data.allHashtags)
+      setHashtagsList(data.allHashtags)
+    }
+
+    )
+
+  },[])
 
   const handleLogout = () => {
    
@@ -34,7 +47,6 @@ function Home() {
     dispatch(memorizeUserToken(''))
     window.location.replace("http://localhost:3001/splash")
   }
-
 
   const [messageRefresh, setMessageRefresh] = useState(0);
   
@@ -64,7 +76,7 @@ function Home() {
       </div>
 
       <div className={styles.rightPanel}>
-        <div><Trends/></div>
+        <div><Trends hashtags={hashtagsList}/></div>
       </div>
 
     </div>
