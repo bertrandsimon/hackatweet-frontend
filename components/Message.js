@@ -91,8 +91,8 @@ function Message(props) {
       
       <div className={styles.messageBox}>
         <span>{props.content}</span>
-        <span className={styles.hashtag}>#hackatweet</span>
-        <span> guys </span>
+        <span className={styles.hashtag}>#{props.hashtag}</span>
+        
       </div>
 
       <div className={styles.likeContainer}>

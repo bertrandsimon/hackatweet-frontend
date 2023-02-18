@@ -5,7 +5,7 @@ Rose : #F82483  */
 
 .container {
     width: 80vw;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

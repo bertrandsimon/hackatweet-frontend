@@ -15,13 +15,23 @@ function Tweet() {
   const token = useSelector((state) => state.userInfos.token)
 
   const addMessage = () => {
+    
+    let messageText = message;
+    let hashtag = '';
+
+    if (message.includes('#')) {
+      [messageText, hashtag] = message.split('#');
+      hashtag = hashtag.trim();
+    }
+
     fetch(`http://localhost:3000/messages/addMessage/${token}`,  {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        message,
+        message: messageText.trim(),
+        hashtag: hashtag.trim()
       })
       })
       .then(response => response.json())

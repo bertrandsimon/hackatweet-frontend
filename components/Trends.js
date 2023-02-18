@@ -1,6 +1,4 @@
 import styles from '../styles/Trends.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import Hashtag from './Hashtag';
 
