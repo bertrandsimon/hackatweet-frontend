@@ -41,10 +41,10 @@ function Home() {
     <div className={styles.container}>
 
       <div className={styles.leftPanel}>
-        <div className={styles.logo}><Link href="/splash"><Image src="/images/logo.png" alt="logo" width={60} height={60} /></Link></div>
+        <div className={styles.logo}><Link href="/splash"><a><Image src="/images/logo.png" alt="logo" width={60} height={60} /></a></Link></div>
         <div></div>
         <div className={styles.leftBottomUser}>
-            <div className={styles.avatar}><Image src="/images/avatar.jpg" alt="avatar" width={60} height={60} /></div>
+            <div className={styles.avatar}><Image src="/images/avatar.png" alt="avatar" width={60} height={60} /></div>
             <div>
               <h3>{firstname}</h3>
               <h4>@{username}</h4>  

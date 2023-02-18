@@ -3,7 +3,7 @@ import styles from '../styles/Message.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { newTweetTrigger } from '../reducers/tweetStatus';
+import { newTweetTrigger, newLikeTrigger } from '../reducers/tweetStatus';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,11 +12,19 @@ import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Message(props) {
 
+  const [likeCounter, setlikeCounter] = useState(0);
+  const [isMessageLiked, setIsMessageLiked] = useState(false);
+  //console.log('props.userId : ', props.userId)
   const activeUser = useSelector((state) => state.userInfos.username);
   let loggedIn = false;
   if (activeUser === props.username) {loggedIn = true}
 
-  const dispatch = useDispatch();
+  
+
+  //console.log('userID by props', props)
+    const dispatch = useDispatch();
+
+    const handleMsgsByUser = (userId) => {props.displayMsgsByUser(userId)}
   
     const deleteMessageHandle = (messageId) => {
       fetch(`http://localhost:3000/messages/deleteMessage/${messageId}`, {
@@ -30,14 +38,32 @@ function Message(props) {
     }
 
     const handleLikeMessage = (messageId) => {
-      //props.updateLikedMessages(props.content);
-      fetch(`http://localhost:3000/messages/likeMessage/${messageId}`,)
-      .then(response => response.json())
+
+      if (isMessageLiked) {
+        fetch(`http://localhost:3000/messages/unlikeMessage/${messageId}?_=${Math.random()}`,)
+        .then(response => response.json())
+        .then (
+          setlikeCounter(likeCounter - 1),
+          setIsMessageLiked(!isMessageLiked),
+          dispatch(newLikeTrigger()),
+        )
+      }
+      else {
+        fetch(`http://localhost:3000/messages/likeMessage/${messageId}?_=${Math.random()}`,)
+        .then(response => response.json())
+        .then (
+          setlikeCounter(likeCounter + 1),
+          setIsMessageLiked(!isMessageLiked),
+          dispatch(newLikeTrigger()),
+        )
+
+      }
+     
    
     };
 
     let heartIconStyle = { 'color': 'white', 'cursor': 'pointer' };
-    if (props.isLiked) {
+    if (isMessageLiked) {
       heartIconStyle = { 'color': '#F82483', 'cursor': 'pointer' };
     }
 
@@ -56,8 +82,8 @@ function Message(props) {
     <div className={styles.container}>
       
       <div className={styles.messageHead}>
-        <div><Image src="/images/avatar.jpg" alt="lgo" width={70} height={70} /></div>
-        <div><span className={styles.messageName}>{props.username}</span></div>
+        <div><Image src="/images/avatar.png" alt="lgo" width={70} height={70} /></div>
+        <div><span className={styles.messageName} onClick={ ()=> handleMsgsByUser(props.userId)}>{props.username}</span></div>
         <div><span className={styles.messageAlias}>@{props.username}</span></div>
         <div><span className={styles.messagePoint}> . </span></div>
         <div><span className={styles.messageHour}> {timeFromNow} </span></div>

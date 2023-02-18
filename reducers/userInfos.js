@@ -4,7 +4,7 @@ const initialState = {
 	username: '',
 	firstname: '',
 	token: '',
-
+	
 };
 
 export const userInfos = createSlice({
