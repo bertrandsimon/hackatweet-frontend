@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 function Hashtag(props) {
 
-  //console.log('props in hashtag component:', props)
 
   return (
     <div className={styles.container}>

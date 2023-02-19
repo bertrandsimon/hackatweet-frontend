@@ -11,10 +11,6 @@ import Tweet from './Tweet';
 import LastTweets from './LastTweets';
 import Trends from './Trends';
 
-// FONT AWESOME IMPORT EXAMPLE
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
 
 import styles from '../styles/Home.module.css';
 
@@ -23,7 +19,7 @@ function Home() {
   const username = useSelector((state) => state.userInfos.username)
   const firstname = useSelector((state) => state.userInfos.firstname)
   const token = useSelector((state) => state.userInfos.token)
-
+  const hashtagRefresh = useSelector((state) => state.tweetStatus.newTweet)
   const [hashtagsList, setHashtagsList] = useState([])
   
   const dispatch = useDispatch();
@@ -32,13 +28,13 @@ function Home() {
     fetch('http://localhost:3000/messages/allHashtags')
     .then(response => response.json())
     .then( data => {
-      console.log('data from hashtags', data.allHashtags)
+      //console.log('data from hashtags', data.allHashtags)
       setHashtagsList(data.allHashtags)
     }
 
     )
 
-  },[])
+  },[hashtagRefresh])
 
   const handleLogout = () => {
    

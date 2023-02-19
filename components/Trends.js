@@ -6,11 +6,6 @@ import { useState } from 'react';
 
 function Trends(props) {
 
-  //console.log('props.allHashtags in TRENDS : ', props.hashtags)
-  // const [hashtagsList, setHashtagsList] = useState(props.hashtags);
-
-  //console.log('props.hashtags in TRENDS :', props.hashtags)
-  //setHashtagsList(props.hashtags)
 
   const hashtag = props.hashtags.map( (data,i) => {
     return <Hashtag key={i} {...data}/>
