@@ -13,7 +13,7 @@ function Hashtag(props) {
       
 
       <div className={styles.tweetCount}>
-        <span>2</span>
+        <span>{props.count}</span>
         <span> </span>
         <span>Tweet(s)</span>
       </div>

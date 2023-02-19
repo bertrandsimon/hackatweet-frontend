@@ -27,12 +27,18 @@ function Home() {
   useEffect( ()=> {
     fetch('http://localhost:3000/messages/allHashtags')
     .then(response => response.json())
-    .then( data => {
-      //console.log('data from hashtags', data.allHashtags)
-      setHashtagsList(data.allHashtags)
-    }
-
-    )
+    .then(data => {
+      const hashtagCounts = data.allHashtags.reduce((acc, item) => {
+        const hashtag = item.hashtag;
+        acc[hashtag] = (acc[hashtag] || 0) + 1;
+        return acc;
+      }, {});
+      const hashtagList = Object.entries(hashtagCounts).map(([hashtag, count]) => ({
+        hashtag,
+        count
+      }));
+      setHashtagsList(hashtagList);
+    });
 
   },[hashtagRefresh])
 
