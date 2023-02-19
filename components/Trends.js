@@ -6,9 +6,13 @@ import { useState } from 'react';
 
 function Trends(props) {
 
-
+  
   const hashtag = props.hashtags.map( (data,i) => {
-    return <Hashtag key={i} {...data}/>
+    console.log(data)
+    if(data.hashtag !== '') {
+      return <Hashtag key={i} {...data}/>
+    }
+    
   })
 
   return (
